@@ -1,6 +1,17 @@
-.TH man(2) "10 December 1945" "0.32" "eniac man page"
+.TH man 2 "10 December 1945" "0.32" "eniac man page"
 .SH NAME
-.B 
-- become a full-stack software engineer.
+.B eniac 
+- the first electronic general-purpose digital computer
 .SH SYNOPSIS
+- eniac
+.SH DESCRIPTION
+- Eniac was Turning-complete, and able to solve "a large class of numerical problems" through reprogramming.
+.SH OPTIONS
+.B Eniac
+- does not take any options.
+.SH SEE ALSO
+.SH BUGS
+- no known bugs.
+.SH AUTHOR
+- University of Pennsylvania.
 
