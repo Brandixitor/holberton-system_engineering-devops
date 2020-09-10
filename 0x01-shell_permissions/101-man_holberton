@@ -5,7 +5,7 @@
 .SH SYNOPSIS
 eniac
 .SH DESCRIPTION
-Eniac was Turning-complete, and able to solve "a large class of numerical problems" through reprogramming.
+Eniac was Tuning-complete, and able to solve "a large class of numerical problems" through reprogramming.
 .SH OPTIONS
 .B eniac
 does not take any options.
@@ -14,4 +14,3 @@ does not take any options.
 No known bugs.
 .SH AUTHOR
 University of Pennsylvania.
-
