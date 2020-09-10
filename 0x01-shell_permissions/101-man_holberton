@@ -1,7 +1,7 @@
 .TH man 2 "10 December 1945" "0.32" "eniac man page"
 .SH NAME
 .B eniac
-the first electronic general-purpose digital computer.
+- the first electronic general-purpose digital computer.
 .SH SYNOPSIS
 eniac
 .SH DESCRIPTION
