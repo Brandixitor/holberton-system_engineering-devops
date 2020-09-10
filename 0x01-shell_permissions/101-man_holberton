@@ -7,7 +7,7 @@ eniac
 .SH DESCRIPTION
 Eniac was Tuning-complete, and able to solve "a large class of numerical problems" through reprogramming.
 .SH OPTIONS
-.B eniac
+.B enidsfnjofac
 does not take any options.
 .SH SEE ALSO
 ENIAC could be programmed to perform complex sequences of operations(2), including loops(2), branches(2), and subroutines(2).
