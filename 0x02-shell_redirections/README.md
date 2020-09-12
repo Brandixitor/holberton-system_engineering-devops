@@ -1,1 +1,1 @@
-This is the shell redirections project!
+This is the redirections project!
