@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Bash script that displays the content of the file /etc/passwd.
+$cline
+$username
+$passwd
+$groupid
+$userid
+$useridinfo
+$homedir
+$cmdshell
+while IFS= read -r line; do
+	cline=$line
+	username=$( echo "$cline" | cut -f1 -d : )
+	passwd=$( echo "$cline" | cut -f2 -d : )
+	userid=$( echo "$cline" | cut -f3 -d : )
+	groupid=$( echo "$cline" | cut -f4 -d : )
+	useridinfo=$( echo "$cline" | cut -f5 -d : )
+	homedir=$( echo "$cline" | cut -f6 -d : )
+	cmdshell=$( echo "$cline" | cut -f7 -d : )
+
+	echo "The user $username is part of the $groupid gang, lives in $homedir and rides $cmdshell. $userid's place is protected by the passcode $passwd, more info about the user here: $useridinfo"
+done < "/etc/passwd"
