@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Bash script that displays the content of the file /etc/passwd.
+$cline
+$username
+$userid
+$homedir
+while read -r line; do
+	cline=$line
+	username=$( echo "$cline" | cut -f1 -d : )
+	userid=$( echo "$cline" | cut -f3 -d : )
+	homedir=$( echo "$cline" | cut -f6 -d : )
+	echo "$username:$userid:$homedir"
+done < "/etc/passwd"
