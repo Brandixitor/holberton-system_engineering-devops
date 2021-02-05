@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
-# This script loops 10 times, displays "bad luck" for the 4th iteration,
-# "good luck" for the 8th iteration and "Holberton School" for other iteration.
-
-i=1
-while [ $i -le 10 ]; do
-	if [ $i -eq 4 ]; then
+# This script is displaying bad luck good luck and holberton school
+x=1
+while [ $x -le 10 ]
+do
+	if [ $x -eq 4 ]
+	then
 		echo "bad luck"
-	elif [ $i -eq 8 ]; then
+	elif [ $x -eq 8 ]
+	then
 		echo "good luck"
 	else
 		echo "Holberton School"
 	fi
-	((i++))
+  x=$((x + 1))
 done
