@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
-# Bash script that displays Holberton School 10 times, but for the 9th iteration, displays Holberton School and then Hi on a new line.
-i=0
-while [ $i -lt 10 ]
-    do
-	((i++))
-	echo "Holberton School" 
-	if [ $i -eq 9 ]; then
+# This script is displaying "Holberton School" 10 times in 9th print hi
+x=1
+while [ $x -le 10 ]
+do
+	if [ $x -eq 9 ]
+	then
+		echo "Holberton School"
 		echo "Hi"
+	else
+		echo "Holberton School"
 	fi
-    done
+  x=$((x + 1))
+done

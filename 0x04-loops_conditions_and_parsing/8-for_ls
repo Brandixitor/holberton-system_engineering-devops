@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Bash script that displays : The content of the current directory In a list.
+# Bash script that displays ls Where only the part of the name after the first dash is displayed
 
 for i in *
 do 
