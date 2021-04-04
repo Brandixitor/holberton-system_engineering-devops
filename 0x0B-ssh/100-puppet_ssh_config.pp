@@ -1,15 +1,13 @@
-# Configuring ssh to use custom private keys.
+# Setup a SSH client configuration file to connect to a server with RSA key.
 
 file_line { 'Turn off passwd auth':
-  ensure   => 'present',
-  name     => 'AUTH_PWD',
-  path     => '/etc/ssh/ssh_config',
-  line     => 'PasswordAuthentication no',
+  path    => '/etc/ssh/ssh_config',
+  line    => '    PasswordAuthentication no',
+  replace => true
 }
+
 file_line { 'Declare identity file':
-  ensure   => 'present',
-  name     => 'IDENTITY_FILE',
-  path     => '/etc/ssh/ssh_config',
-  line     => 'IdentityFile ~/.ssh/holberton',
+  path    => '/etc/ssh/ssh_config',
+  line    => '    IdentityFile ~/.ssh/holberton',
+  replace => true
 }
-FILE_LINE['AUTH_PWD'] ~> FILE_LINE['IDENTITY_FILE']
