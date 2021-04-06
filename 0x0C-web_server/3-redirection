@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
-# Script that setup a nginx web server on our server + redirection.
-
-apt update -y && apt upgrade -y
-apt install nginx -y
-
-# Index page
-echo "Holberton School" >/var/www/html/index.nginx-debian.html
-
-# Redirect to fabulous Rick Astley page
-sed -i '/listen \[::\]:80 default_server;/a\        rewrite ^\/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;' /etc/nginx/sites-available/default
-
-service nginx restart
+# Installing Nginx on Server and redirect
+sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt-get install -y nginx
+sudo chown -R "$USER":"$USER" /var/www/
+sudo chown -R "$USER":"$USER" /etc/nginx
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+line="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;"
+sudo sed -i "26i $line" /etc/nginx/sites-available/default
+sudo service nginx restart
+sudo service nginx reload
