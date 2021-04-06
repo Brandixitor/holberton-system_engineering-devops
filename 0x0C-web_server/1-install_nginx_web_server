@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Script that setup a nginx web server on our server.
-
 apt update -y && apt upgrade -y
 apt install nginx -y
 
