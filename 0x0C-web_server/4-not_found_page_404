@@ -8,10 +8,10 @@ apt install nginx -y
 echo "Holberton School" >/var/www/html/index.nginx-debian.html
 
 # Redirect to fabulous Rick Astley page
-sed -i '/listen \[::\]:80 default_server;/a\        rewrite ^\/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;' /etc/nginx/sites-available/default
+sed -i '/listen \[::\]:80 default_server;/a\        rewrite ^\/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 
 # 404 Page not Found
 echo "Ceci n'est pas une page" >/var/www/html/404.html
-sed -i '/dQw4w9WgXcQ permanent;$/a\        error_page 404 /404.html;' /etc/nginx/sites-available/default
+sed -i '/TGUlwu4 permanent;$/a\        error_page 404 /404.html;' /etc/nginx/sites-available/default
 
 service nginx restart
