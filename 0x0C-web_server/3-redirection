@@ -8,6 +8,6 @@ apt install nginx -y
 echo "Holberton School" >/var/www/html/index.nginx-debian.html
 
 # Redirect to fabulous Rick Astley page
-sed -i '/listen \[::\]:80 default_server;/a\        rewrite ^\/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;' /etc/nginx/sites-available/default
+sed -i '/listen \[::\]:80 default_server;/a\        rewrite ^\/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 redirect;' /etc/nginx/sites-available/default
 
 service nginx restart
