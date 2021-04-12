@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Configures a server with HAProxy
+
+apt update -y && apt upgrade -y
+apt install haproxy=1.6.\* -y
+
+echo "ENABLED=1" >>/etc/default/haproxy
+
+haproxy_cfg="\nbackend web-backend\n\tbalance roundrobin\n\tserver 2500-web-01 35.229.40.200:80 check\n\tserver 2500-web-02 35.229.23.118:80 check\n\nfrontend http\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend"
+
+echo -e "$haproxy_cfg" >>/etc/haproxy/haproxy.cfg
+
+service haproxy restart
