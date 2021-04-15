@@ -1,13 +1,21 @@
 #!/usr/bin/env bash
 # Script that displays information about subdomains.
 
-domain=${1}
-subdomains=(${2:-www lb-01 web-01 web-02})
+DOMAIN=$1
+SUB_DOMAINS=('www' 'lb-01' 'web-01' 'web-02')
 
-subdomain_data() {
-	dig "${1}.${2}" | awk -v subdomain="${1}" '/ANSWER SECTION:/ { getline; print "The subdomain", subdomain, "is a", $4, "record and points to", $5 }'
+custom_dig () {
+    if [[ $1 =~ [a-z] ]]; then
+        if [[ $2 =~ [a-z] ]]; then
+            SUB_DOMAINS=("$2")
+        fi
+        for SUB_DOMAIN in "${SUB_DOMAINS[@]}"; do
+            ANSWERLINE=$(dig "$SUB_DOMAIN"".""$DOMAIN" | grep -A1 'ANSWER SECTION:' | tail -n1 )
+            RECORD_TYPE=$(echo "$ANSWERLINE" | awk '{print $4}')
+            DESTINATION=$(echo "$ANSWERLINE" | awk '{print $5}')
+            ANSWER="The subdomain $SUB_DOMAIN is a $RECORD_TYPE record and points to $DESTINATION"
+            awk -v ANSWER="$ANSWER" 'BEGIN {print ANSWER}'
+        done
+    fi
 }
-
-for subdomain in "${subdomains[@]}"; do
-	subdomain_data "$subdomain" "$domain"
-done
+custom_dig "$@"
