@@ -21,4 +21,3 @@ if __name__ == "__main__":
             row = [id, u.get("username"), t.get("completed"), t.get("title")]
             row = [str(value) for value in row]
             csv_writer.writerow(row)
-            
