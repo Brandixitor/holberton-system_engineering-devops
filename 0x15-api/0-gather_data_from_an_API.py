@@ -29,4 +29,3 @@ if __name__ == "__main__":
     print(sentence.format(user.get("name"), completed_nb, total_nb))
     for task in completed_tasks:
         print("\t {}".format(task))
-        

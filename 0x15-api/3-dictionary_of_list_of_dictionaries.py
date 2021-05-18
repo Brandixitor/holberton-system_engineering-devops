@@ -27,4 +27,3 @@ if __name__ == "__main__":
 
     with open('todo_all_employees.json', 'w') as f:
         json.dump({int(x): data[x] for x in data.keys()}, f, sort_keys=True)
-        
