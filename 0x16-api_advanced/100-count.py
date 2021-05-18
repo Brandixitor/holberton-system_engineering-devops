@@ -50,3 +50,4 @@ def count_words(subreddit, word_list, after='', occurs={}):
             if (occurs[key] > 0):
                 print("{}: {}".format(key, occurs[key]))
         return
+
